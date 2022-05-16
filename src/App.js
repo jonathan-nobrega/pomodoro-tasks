@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import TaskItem from './components/TaskItem'
+import { list } from './data/tasks'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <section className="left-section">
+        <h1 className="main-title">
+          Pomodoro Tasks
+        </h1>
+        <ul>
+          {list.map((task, index) => {
+            return <TaskItem key={index} task={task} />
+          })}
+        </ul>
+      </section>
+
+
+      <section className="right-section">
+        <p>CURRENT TASK</p>
+        <h1>Um titulo qualquer</h1>
+
+      </section>
     </div>
   );
 }
