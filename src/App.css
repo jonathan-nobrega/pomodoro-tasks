@@ -1,9 +1,15 @@
+body {
+  maargin: 0;
+}
+
 .container {
+  position: absolute;
   display: flex;
   height: 100vh;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   color: #303030;
+  background-color:gray;
 }
 
 ul {
@@ -20,6 +26,7 @@ ul {
 .left-section {
   background-color: orange;
   width: 30%;
+  height: 100vh;
   padding: 30px;
   box-shadow: 0 0 20px 0 #888888;
   text-align: center;
@@ -27,8 +34,11 @@ ul {
 
 .right-section {
   background-color: white;
+  padding: 30px;
   text-align: center;
+  align-items: center;
   width: 70%;
+  height: 100%;
 }
 
 .task-container {
@@ -48,4 +58,67 @@ ul {
 .task-timeCap {
   text-align: center;
   font-size: 2em;
+}
+
+
+/* --------------------- */
+
+.timer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Sets the containers height and width */
+.base-timer {
+  /* display: block; */
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 3px;
+  stroke: orange;
+}
+
+.base-timer__inside-text {
+  position: absolute;
+  
+  /* Size should match the parent container */
+  width: 300px;
+  height: 300px;
+  
+  /* Keep the label aligned to the top */
+  top: 0;
+  
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.base-timer__inside-label {
+  font-size: 48px;
+  margin: 10px 0 0 0;
+}
+
+.base-timer__inside-description {
+  margin: 10px 0 0 0;
+}
+
+.button-box {
+  /* display: block; */
+  width: 100%;
+  background: yellow;
+  height: 100%;
 }
